@@ -6,11 +6,11 @@
  * and the book, please list everything.  And remember- citing a source does
  * NOT mean it is okay to COPY THAT SOURCE.  What you submit here **MUST BE
  * YOUR OWN WORK**.
- * References:
+ * References: cplusplus, cs tutoring
  *
  *
  * Finally, please indicate approximately how many hours you spent on this:
- * #hours: 
+ * #hours:14
  */
 
 // TODO: write the program.
@@ -20,6 +20,24 @@ using std::cout;
 using std::endl;
 #include <getopt.h> // to parse long arguments.
 #include <cstdlib> // for atoi function
+
+//functions called out:
+void moveCount(int n, short start, short end, short left);
+
+//functions breakdown:
+// start is my first line and end is the line where I want to have my all disks and left is my remainning line
+
+void moveCount(int n, short start, short end, short left){ //my function parameter
+		if(n == 1){ // if i have only one disks so it will just take to my end line
+			cout <<  start << " " << end << endl;
+        return;
+    }
+		if(n > 1) { //if I have more disks then following code
+			moveCount(n - 1, start, left, end); // this is first to disk to my 2nd line
+			cout <<  start << " " << end << endl;
+			moveCount(n - 1, left, end, start); // finally all disks to my last line
+		}
+}
 
 /* Here's a skeleton main function for processing the arguments. */
 int main(int argc, char *argv[]) {
@@ -51,9 +69,12 @@ int main(int argc, char *argv[]) {
 				return 1;
 		}
 	}
-
 	/* TODO: now that you have the options and arguments,
 	 * solve the puzzle. */
+		short left = (6 - (start + end));// no matter what the sum of the 3 rods will be 6(1+2+3) so if I want to find which line is my remainning line, I use this formula to figure out.
+
+    moveCount(n, start, end, left);// function called
 
 	return 0;
 }
+//end of the code.
