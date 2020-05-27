@@ -13,7 +13,7 @@
 using std::cin;
 using std::cout;
 #include <string>
-using std::string;
+using std::string; //string added for the text compiling
 
 int main () {
 
@@ -28,4 +28,5 @@ int main () {
 
  return 0;
 
- }
+}
+//end of the code
