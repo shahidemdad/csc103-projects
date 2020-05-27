@@ -95,6 +95,9 @@ int main(int argc, char *argv[]) {
                 return 1;
         }
     }
+
+    //////   FOLLOW THE STEPS    ////
+
     /* NOTE: at this point, variables 'reverse' and 'unique' have been set
 	 * according to the command line.  */
 	/* TODO: finish writing this.  Maybe use while(getline(cin,line)) or
